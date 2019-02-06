@@ -63,7 +63,7 @@
             this.fecha_nacimiento_lecDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.fecha_penalizacion_lecDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.lectoresTableAdapter = new BibliotecaJM.DS_LectoresTableAdapters.lectoresTableAdapter();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.bBuscarProvincia = new System.Windows.Forms.Button();
             id_lecLabel = new System.Windows.Forms.Label();
             nombre_lecLabel = new System.Windows.Forms.Label();
             domicilio_lecLabel = new System.Windows.Forms.Label();
@@ -241,6 +241,7 @@
             // 
             this.lectoresBindingSource.DataMember = "lectores";
             this.lectoresBindingSource.DataSource = this.dS_Lectores;
+            this.lectoresBindingSource.PositionChanged += new System.EventHandler(this.lectoresBindingSource_PositionChanged);
             // 
             // dS_Lectores
             // 
@@ -264,7 +265,6 @@
             this.bBuscarID.Size = new System.Drawing.Size(75, 23);
             this.bBuscarID.TabIndex = 2;
             this.bBuscarID.Text = "Buscar";
-            this.toolTip1.SetToolTip(this.bBuscarID, "HOla");
             this.bBuscarID.UseVisualStyleBackColor = true;
             this.bBuscarID.Click += new System.EventHandler(this.bBuscarID_Click);
             // 
@@ -302,6 +302,7 @@
             // 
             // gbDetalle
             // 
+            this.gbDetalle.Controls.Add(this.bBuscarProvincia);
             this.gbDetalle.Controls.Add(this.bCancelar);
             this.gbDetalle.Controls.Add(this.bAceptar);
             this.gbDetalle.Controls.Add(id_lecLabel);
@@ -333,6 +334,7 @@
             this.bCancelar.TabIndex = 15;
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.UseVisualStyleBackColor = true;
+            this.bCancelar.Click += new System.EventHandler(this.bCancelar_Click);
             // 
             // bAceptar
             // 
@@ -342,6 +344,7 @@
             this.bAceptar.TabIndex = 14;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
+            this.bAceptar.Click += new System.EventHandler(this.bAceptar_Click);
             // 
             // id_lecTextBox
             // 
@@ -369,10 +372,9 @@
             // 
             // provincia_lecTextBox
             // 
-            this.provincia_lecTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lectoresBindingSource, "provincia_lec", true));
             this.provincia_lecTextBox.Location = new System.Drawing.Point(147, 109);
             this.provincia_lecTextBox.Name = "provincia_lecTextBox";
-            this.provincia_lecTextBox.Size = new System.Drawing.Size(317, 20);
+            this.provincia_lecTextBox.Size = new System.Drawing.Size(284, 20);
             this.provincia_lecTextBox.TabIndex = 7;
             // 
             // email_lecTextBox
@@ -393,8 +395,10 @@
             // 
             // fecha_penalizacion_lecDateTimePicker
             // 
+            this.fecha_penalizacion_lecDateTimePicker.CalendarForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.fecha_penalizacion_lecDateTimePicker.CustomFormat = "dddd\',\'d\' de \'MMM\' de \'yyyy    hh:mm:ss";
             this.fecha_penalizacion_lecDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.lectoresBindingSource, "fecha_penalizacion_lec", true));
-            this.fecha_penalizacion_lecDateTimePicker.Enabled = false;
+            this.fecha_penalizacion_lecDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.fecha_penalizacion_lecDateTimePicker.Location = new System.Drawing.Point(147, 187);
             this.fecha_penalizacion_lecDateTimePicker.Name = "fecha_penalizacion_lecDateTimePicker";
             this.fecha_penalizacion_lecDateTimePicker.Size = new System.Drawing.Size(317, 20);
@@ -403,6 +407,15 @@
             // lectoresTableAdapter
             // 
             this.lectoresTableAdapter.ClearBeforeFill = true;
+            // 
+            // bBuscarProvincia
+            // 
+            this.bBuscarProvincia.Location = new System.Drawing.Point(437, 107);
+            this.bBuscarProvincia.Name = "bBuscarProvincia";
+            this.bBuscarProvincia.Size = new System.Drawing.Size(27, 23);
+            this.bBuscarProvincia.TabIndex = 16;
+            this.bBuscarProvincia.Text = "...";
+            this.bBuscarProvincia.UseVisualStyleBackColor = true;
             // 
             // FM_Lectores
             // 
@@ -455,6 +468,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idlecDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombrelecDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn domiciliolecDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button bBuscarProvincia;
     }
 }

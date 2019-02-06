@@ -25,9 +25,9 @@ namespace BibliotecaJM
 
         private void FM_Lectores_Load(object sender, EventArgs e)
         {
-            // No se puede editar el ID:
+            // No se puede editar el ID, la provincia ni la fecha de penalizacion:
             this.id_lecTextBox.ReadOnly = true;
-            // No se puede editar la fecha de penalizacion 
+            this.provincia_lecTextBox.ReadOnly = true;
             this.fecha_penalizacion_lecDateTimePicker.Enabled = false;
             this.lectoresTableAdapter.FillByNombre(dS_Lectores.lectores, "");
             ModoBusqueda();
@@ -38,17 +38,17 @@ namespace BibliotecaJM
             gbBuscar.Enabled = true;
             gbDetalle.Enabled = false;
         }
+
         private void ModoEdición()
         {
-            tbNombre.Focus();        
             gbBuscar.Enabled = false;
             gbDetalle.Enabled = true;
+            nombre_lecTextBox.Focus();
         }
 
         private void bBuscarID_Click(object sender, EventArgs e)
         {
-            int id;
-            if (!int.TryParse(tbId.Text, out id))
+            if (!int.TryParse(tbId.Text, out int id))
                 return;
             this.lectoresTableAdapter.FillByID(dS_Lectores.lectores, id);
         }
@@ -82,7 +82,41 @@ namespace BibliotecaJM
                 {
                     MessageBox.Show("Error al eliminar el registro: " + ex.Message);
                 }
+        }
 
+        private void bAceptar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lectoresBindingSource.EndEdit();
+                this.lectoresTableAdapter.Update(dS_Lectores.lectores);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en la inserción del registro:" + ex.Message);
+            }
+            ModoBusqueda();
+        }
+
+        private void bCancelar_Click(object sender, EventArgs e)
+        {
+            lectoresBindingSource.CancelEdit();
+            ModoBusqueda();
+        }
+
+        private void lectoresBindingSource_PositionChanged(object sender, EventArgs e)
+        {
+            if (!dS_Lectores.lectores[lectoresBindingSource.Position].Isprovincia_lecNull())
+            {
+                DS_Provincias.provinciasDataTable provincias = new DS_Provincias.provinciasDataTable();
+                DS_ProvinciasTableAdapters.provinciasTableAdapter ta = new DS_ProvinciasTableAdapters.provinciasTableAdapter();
+                ta.FillByID(provincias, dS_Lectores.lectores[lectoresBindingSource.Position].provincia_lec);
+                provincia_lecTextBox.Text = provincias[0].provincia_pro;
+            }
+            if (!dS_Lectores.lectores[lectoresBindingSource.Position].Isfecha_penalizacion_lecNull())
+                fecha_penalizacion_lecDateTimePicker.Show();
+            else
+                fecha_penalizacion_lecDateTimePicker.Hide();
         }
     }
 }
