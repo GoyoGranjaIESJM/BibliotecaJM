@@ -11,7 +11,7 @@ namespace BibliotecaJM
     public partial class FM_Lectores : BibliotecaJM.FM_Modelo
     {
         private UsuarioActual usuarioActual;
-
+        private int provincia;
         public FM_Lectores()
         {
             InitializeComponent();
@@ -61,6 +61,7 @@ namespace BibliotecaJM
         private void bNuevo_Click(object sender, EventArgs e)
         {
             this.lectoresBindingSource.AddNew();
+            provincia_lecTextBox.Text = ""; // No está enlazado a datos
             ModoEdición();
         }
 
@@ -89,6 +90,7 @@ namespace BibliotecaJM
             try
             {
                 lectoresBindingSource.EndEdit();
+                dS_Lectores.lectores[lectoresBindingSource.Position].provincia_lec = provincia;
                 this.lectoresTableAdapter.Update(dS_Lectores.lectores);
             }
             catch (Exception ex)
@@ -117,6 +119,21 @@ namespace BibliotecaJM
                 fecha_penalizacion_lecDateTimePicker.Show();
             else
                 fecha_penalizacion_lecDateTimePicker.Hide();
+        }
+
+        private void bBuscarProvincia_Click(object sender, EventArgs e)
+        {
+            FM_LU_Provincias fp = new FM_LU_Provincias();
+            fp.ShowDialog();
+            if (fp.Id != 0)
+            {
+                provincia_lecTextBox.Text = fp.Provincia;
+                // Aqui no se puede modificar el datatable porque todavía no hemos insertado
+                // el registro y lectoresBindingSource.Position no está actualizado:
+                // dS_Lectores.lectores[lectoresBindingSource.Position].provincia_lec = fp.Id;
+                // Usamos una variable auxiliar para guardar más tarde:
+                provincia = fp.Id;
+            }
         }
     }
 }

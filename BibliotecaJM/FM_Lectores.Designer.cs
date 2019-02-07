@@ -53,6 +53,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gbDetalle = new System.Windows.Forms.GroupBox();
+            this.bBuscarProvincia = new System.Windows.Forms.Button();
             this.bCancelar = new System.Windows.Forms.Button();
             this.bAceptar = new System.Windows.Forms.Button();
             this.id_lecTextBox = new System.Windows.Forms.TextBox();
@@ -63,7 +64,6 @@
             this.fecha_nacimiento_lecDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.fecha_penalizacion_lecDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.lectoresTableAdapter = new BibliotecaJM.DS_LectoresTableAdapters.lectoresTableAdapter();
-            this.bBuscarProvincia = new System.Windows.Forms.Button();
             id_lecLabel = new System.Windows.Forms.Label();
             nombre_lecLabel = new System.Windows.Forms.Label();
             domicilio_lecLabel = new System.Windows.Forms.Label();
@@ -326,6 +326,16 @@
             this.gbDetalle.TabStop = false;
             this.gbDetalle.Text = "Detalle lector";
             // 
+            // bBuscarProvincia
+            // 
+            this.bBuscarProvincia.Location = new System.Drawing.Point(437, 107);
+            this.bBuscarProvincia.Name = "bBuscarProvincia";
+            this.bBuscarProvincia.Size = new System.Drawing.Size(27, 23);
+            this.bBuscarProvincia.TabIndex = 16;
+            this.bBuscarProvincia.Text = "...";
+            this.bBuscarProvincia.UseVisualStyleBackColor = true;
+            this.bBuscarProvincia.Click += new System.EventHandler(this.bBuscarProvincia_Click);
+            // 
             // bCancelar
             // 
             this.bCancelar.Location = new System.Drawing.Point(389, 618);
@@ -407,15 +417,6 @@
             // lectoresTableAdapter
             // 
             this.lectoresTableAdapter.ClearBeforeFill = true;
-            // 
-            // bBuscarProvincia
-            // 
-            this.bBuscarProvincia.Location = new System.Drawing.Point(437, 107);
-            this.bBuscarProvincia.Name = "bBuscarProvincia";
-            this.bBuscarProvincia.Size = new System.Drawing.Size(27, 23);
-            this.bBuscarProvincia.TabIndex = 16;
-            this.bBuscarProvincia.Text = "...";
-            this.bBuscarProvincia.UseVisualStyleBackColor = true;
             // 
             // FM_Lectores
             // 
