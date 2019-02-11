@@ -146,7 +146,7 @@
             this.IsMdiContainer = true;
             this.Name = "FM_Principal";
             this.Text = "BibliotecaJM";
-            this.Load += new System.EventHandler(this.FM_Principal_Load);
+            this.Shown += new System.EventHandler(this.FM_Principal_Shown);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
