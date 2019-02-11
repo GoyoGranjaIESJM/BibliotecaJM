@@ -28,6 +28,7 @@ namespace BibliotecaJM
             // No se puede editar el ID, la provincia ni la fecha de penalizacion:
             this.id_lecTextBox.ReadOnly = true;
             this.provincia_lecTextBox.ReadOnly = true;
+            this.provincia_lecIDTextBox.ReadOnly = true;
             this.fecha_penalizacion_lecDateTimePicker.Enabled = false;
             this.lectoresTableAdapter.FillByNombre(dS_Lectores.lectores, "");
             ModoBusqueda();
@@ -110,8 +111,8 @@ namespace BibliotecaJM
         {
             if (!dS_Lectores.lectores[lectoresBindingSource.Position].Isprovincia_lecNull())
             {
-                DS_Provincias.provinciasDataTable provincias = new DS_Provincias.provinciasDataTable();
-                DS_ProvinciasTableAdapters.provinciasTableAdapter ta = new DS_ProvinciasTableAdapters.provinciasTableAdapter();
+                var provincias = new DS_Provincias.provinciasDataTable();
+                var ta = new DS_ProvinciasTableAdapters.provinciasTableAdapter();
                 ta.FillByID(provincias, dS_Lectores.lectores[lectoresBindingSource.Position].provincia_lec);
                 provincia_lecTextBox.Text = provincias[0].provincia_pro;
             }
@@ -128,11 +129,12 @@ namespace BibliotecaJM
             if (fp.Id != 0)
             {
                 provincia_lecTextBox.Text = fp.Provincia;
+                provincia_lecIDTextBox.Text = fp.Id.ToString();
                 // Aqui no se puede modificar el datatable porque todavía no hemos insertado
                 // el registro y lectoresBindingSource.Position no está actualizado:
                 // dS_Lectores.lectores[lectoresBindingSource.Position].provincia_lec = fp.Id;
                 // Usamos una variable auxiliar para guardar más tarde:
-                provincia = fp.Id;
+                //provincia = fp.Id;
             }
         }
     }

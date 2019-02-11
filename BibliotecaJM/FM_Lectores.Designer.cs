@@ -59,6 +59,7 @@
             this.id_lecTextBox = new System.Windows.Forms.TextBox();
             this.nombre_lecTextBox = new System.Windows.Forms.TextBox();
             this.domicilio_lecTextBox = new System.Windows.Forms.TextBox();
+            this.provincia_lecIDTextBox = new System.Windows.Forms.TextBox();
             this.provincia_lecTextBox = new System.Windows.Forms.TextBox();
             this.email_lecTextBox = new System.Windows.Forms.TextBox();
             this.fecha_nacimiento_lecDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -312,6 +313,7 @@
             this.gbDetalle.Controls.Add(domicilio_lecLabel);
             this.gbDetalle.Controls.Add(this.domicilio_lecTextBox);
             this.gbDetalle.Controls.Add(provincia_lecLabel);
+            this.gbDetalle.Controls.Add(this.provincia_lecIDTextBox);
             this.gbDetalle.Controls.Add(this.provincia_lecTextBox);
             this.gbDetalle.Controls.Add(email_lecLabel);
             this.gbDetalle.Controls.Add(this.email_lecTextBox);
@@ -380,11 +382,19 @@
             this.domicilio_lecTextBox.Size = new System.Drawing.Size(317, 20);
             this.domicilio_lecTextBox.TabIndex = 5;
             // 
+            // provincia_lecIDTextBox
+            // 
+            this.provincia_lecIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lectoresBindingSource, "provincia_lec", true));
+            this.provincia_lecIDTextBox.Location = new System.Drawing.Point(147, 109);
+            this.provincia_lecIDTextBox.Name = "provincia_lecIDTextBox";
+            this.provincia_lecIDTextBox.Size = new System.Drawing.Size(26, 20);
+            this.provincia_lecIDTextBox.TabIndex = 7;
+            // 
             // provincia_lecTextBox
             // 
-            this.provincia_lecTextBox.Location = new System.Drawing.Point(147, 109);
+            this.provincia_lecTextBox.Location = new System.Drawing.Point(179, 109);
             this.provincia_lecTextBox.Name = "provincia_lecTextBox";
-            this.provincia_lecTextBox.Size = new System.Drawing.Size(284, 20);
+            this.provincia_lecTextBox.Size = new System.Drawing.Size(252, 20);
             this.provincia_lecTextBox.TabIndex = 7;
             // 
             // email_lecTextBox
@@ -470,5 +480,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombrelecDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn domiciliolecDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button bBuscarProvincia;
+        private System.Windows.Forms.TextBox provincia_lecIDTextBox;
     }
 }
