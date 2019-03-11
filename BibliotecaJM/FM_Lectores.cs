@@ -11,7 +11,7 @@ namespace BibliotecaJM
     public partial class FM_Lectores : BibliotecaJM.FM_Modelo
     {
         private UsuarioActual usuarioActual;
-        private int provincia;
+        private string provincia;
         public FM_Lectores()
         {
             InitializeComponent();
@@ -91,7 +91,6 @@ namespace BibliotecaJM
             try
             {
                 lectoresBindingSource.EndEdit();
-                dS_Lectores.lectores[lectoresBindingSource.Position].provincia_lec = provincia;
                 this.lectoresTableAdapter.Update(dS_Lectores.lectores);
             }
             catch (Exception ex)
@@ -104,6 +103,7 @@ namespace BibliotecaJM
         private void bCancelar_Click(object sender, EventArgs e)
         {
             lectoresBindingSource.CancelEdit();
+            provincia_lecTextBox.Text = provincia;
             ModoBusqueda();
         }
 
@@ -114,8 +114,11 @@ namespace BibliotecaJM
                 var provincias = new DS_Provincias.provinciasDataTable();
                 var ta = new DS_ProvinciasTableAdapters.provinciasTableAdapter();
                 ta.FillByID(provincias, dS_Lectores.lectores[lectoresBindingSource.Position].provincia_lec);
-                provincia_lecTextBox.Text = provincias[0].provincia_pro;
+                provincia = provincia_lecTextBox.Text = provincias[0].provincia_pro;
             }
+            else
+                provincia = provincia_lecTextBox.Text = "";
+
             if (!dS_Lectores.lectores[lectoresBindingSource.Position].Isfecha_penalizacion_lecNull())
                 fecha_penalizacion_lecDateTimePicker.Show();
             else
@@ -130,11 +133,6 @@ namespace BibliotecaJM
             {
                 provincia_lecTextBox.Text = fp.Provincia;
                 provincia_lecIDTextBox.Text = fp.Id.ToString();
-                // Aqui no se puede modificar el datatable porque todavía no hemos insertado
-                // el registro y lectoresBindingSource.Position no está actualizado:
-                // dS_Lectores.lectores[lectoresBindingSource.Position].provincia_lec = fp.Id;
-                // Usamos una variable auxiliar para guardar más tarde:
-                //provincia = fp.Id;
             }
         }
     }
