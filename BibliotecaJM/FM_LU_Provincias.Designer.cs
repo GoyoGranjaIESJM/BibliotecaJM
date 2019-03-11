@@ -32,21 +32,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FM_LU_Provincias));
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.provinciasDataGridView = new System.Windows.Forms.DataGridView();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tbProvincia = new System.Windows.Forms.ToolStripTextBox();
-            this.bBuscar = new System.Windows.Forms.ToolStripButton();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.provinciasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS_Provincias = new BibliotecaJM.DS_Provincias();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tbProvincia = new System.Windows.Forms.ToolStripTextBox();
+            this.bBuscar = new System.Windows.Forms.ToolStripButton();
             this.provinciasTableAdapter = new BibliotecaJM.DS_ProvinciasTableAdapters.provinciasTableAdapter();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.provinciasDataGridView)).BeginInit();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.provinciasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_Provincias)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -92,33 +92,6 @@
             this.provinciasDataGridView.TabIndex = 0;
             this.provinciasDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.provinciasDataGridView_CellDoubleClick);
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tbProvincia,
-            this.bBuscar});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(266, 25);
-            this.toolStrip1.Stretch = true;
-            this.toolStrip1.TabIndex = 0;
-            // 
-            // tbProvincia
-            // 
-            this.tbProvincia.Name = "tbProvincia";
-            this.tbProvincia.Size = new System.Drawing.Size(200, 25);
-            // 
-            // bBuscar
-            // 
-            this.bBuscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.bBuscar.Image = ((System.Drawing.Image)(resources.GetObject("bBuscar.Image")));
-            this.bBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bBuscar.Name = "bBuscar";
-            this.bBuscar.Size = new System.Drawing.Size(46, 22);
-            this.bBuscar.Text = "Buscar";
-            this.bBuscar.Click += new System.EventHandler(this.bBuscar_Click);
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "id_pro";
@@ -145,6 +118,33 @@
             this.dS_Provincias.DataSetName = "DS_Provincias";
             this.dS_Provincias.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tbProvincia,
+            this.bBuscar});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(266, 25);
+            this.toolStrip1.Stretch = true;
+            this.toolStrip1.TabIndex = 0;
+            // 
+            // tbProvincia
+            // 
+            this.tbProvincia.Name = "tbProvincia";
+            this.tbProvincia.Size = new System.Drawing.Size(200, 25);
+            // 
+            // bBuscar
+            // 
+            this.bBuscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.bBuscar.Image = ((System.Drawing.Image)(resources.GetObject("bBuscar.Image")));
+            this.bBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bBuscar.Name = "bBuscar";
+            this.bBuscar.Size = new System.Drawing.Size(46, 19);
+            this.bBuscar.Text = "Buscar";
+            this.bBuscar.Click += new System.EventHandler(this.bBuscar_Click);
+            // 
             // provinciasTableAdapter
             // 
             this.provinciasTableAdapter.ClearBeforeFill = true;
@@ -156,6 +156,7 @@
             this.ClientSize = new System.Drawing.Size(266, 450);
             this.Controls.Add(this.toolStripContainer1);
             this.Name = "FM_LU_Provincias";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Provincias";
             this.Load += new System.EventHandler(this.FM_LU_Provincias_Load);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
@@ -164,10 +165,10 @@
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.provinciasDataGridView)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.provinciasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_Provincias)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }

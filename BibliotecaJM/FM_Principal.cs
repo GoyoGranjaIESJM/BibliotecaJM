@@ -20,6 +20,7 @@ namespace BibliotecaJM
         private void FM_Principal_Shown(object sender, EventArgs e)
         {
             FM_Login fl = new FM_Login();
+            
             fl.ShowDialog();
             if (fl.usuarioActual == null)
                 this.Close();

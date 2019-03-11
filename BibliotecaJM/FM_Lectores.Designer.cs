@@ -82,7 +82,7 @@
             // id_lecLabel
             // 
             id_lecLabel.AutoSize = true;
-            id_lecLabel.Location = new System.Drawing.Point(25, 34);
+            id_lecLabel.Location = new System.Drawing.Point(16, 34);
             id_lecLabel.Name = "id_lecLabel";
             id_lecLabel.Size = new System.Drawing.Size(68, 13);
             id_lecLabel.TabIndex = 0;
@@ -91,7 +91,7 @@
             // nombre_lecLabel
             // 
             nombre_lecLabel.AutoSize = true;
-            nombre_lecLabel.Location = new System.Drawing.Point(25, 60);
+            nombre_lecLabel.Location = new System.Drawing.Point(16, 60);
             nombre_lecLabel.Name = "nombre_lecLabel";
             nombre_lecLabel.Size = new System.Drawing.Size(47, 13);
             nombre_lecLabel.TabIndex = 2;
@@ -100,7 +100,7 @@
             // domicilio_lecLabel
             // 
             domicilio_lecLabel.AutoSize = true;
-            domicilio_lecLabel.Location = new System.Drawing.Point(25, 86);
+            domicilio_lecLabel.Location = new System.Drawing.Point(16, 86);
             domicilio_lecLabel.Name = "domicilio_lecLabel";
             domicilio_lecLabel.Size = new System.Drawing.Size(52, 13);
             domicilio_lecLabel.TabIndex = 4;
@@ -109,7 +109,7 @@
             // provincia_lecLabel
             // 
             provincia_lecLabel.AutoSize = true;
-            provincia_lecLabel.Location = new System.Drawing.Point(25, 112);
+            provincia_lecLabel.Location = new System.Drawing.Point(16, 112);
             provincia_lecLabel.Name = "provincia_lecLabel";
             provincia_lecLabel.Size = new System.Drawing.Size(54, 13);
             provincia_lecLabel.TabIndex = 6;
@@ -118,7 +118,7 @@
             // email_lecLabel
             // 
             email_lecLabel.AutoSize = true;
-            email_lecLabel.Location = new System.Drawing.Point(25, 138);
+            email_lecLabel.Location = new System.Drawing.Point(16, 138);
             email_lecLabel.Name = "email_lecLabel";
             email_lecLabel.Size = new System.Drawing.Size(96, 13);
             email_lecLabel.TabIndex = 8;
@@ -127,7 +127,7 @@
             // fecha_nacimiento_lecLabel
             // 
             fecha_nacimiento_lecLabel.AutoSize = true;
-            fecha_nacimiento_lecLabel.Location = new System.Drawing.Point(25, 165);
+            fecha_nacimiento_lecLabel.Location = new System.Drawing.Point(16, 165);
             fecha_nacimiento_lecLabel.Name = "fecha_nacimiento_lecLabel";
             fecha_nacimiento_lecLabel.Size = new System.Drawing.Size(94, 13);
             fecha_nacimiento_lecLabel.TabIndex = 10;
@@ -136,7 +136,7 @@
             // fecha_penalizacion_lecLabel
             // 
             fecha_penalizacion_lecLabel.AutoSize = true;
-            fecha_penalizacion_lecLabel.Location = new System.Drawing.Point(25, 191);
+            fecha_penalizacion_lecLabel.Location = new System.Drawing.Point(16, 191);
             fecha_penalizacion_lecLabel.Name = "fecha_penalizacion_lecLabel";
             fecha_penalizacion_lecLabel.Size = new System.Drawing.Size(102, 13);
             fecha_penalizacion_lecLabel.TabIndex = 12;
@@ -156,14 +156,14 @@
             this.gbBuscar.Controls.Add(this.label1);
             this.gbBuscar.Location = new System.Drawing.Point(12, 12);
             this.gbBuscar.Name = "gbBuscar";
-            this.gbBuscar.Size = new System.Drawing.Size(494, 653);
+            this.gbBuscar.Size = new System.Drawing.Size(494, 617);
             this.gbBuscar.TabIndex = 0;
             this.gbBuscar.TabStop = false;
             this.gbBuscar.Text = "Buscar";
             // 
             // bEliminar
             // 
-            this.bEliminar.Location = new System.Drawing.Point(399, 618);
+            this.bEliminar.Location = new System.Drawing.Point(399, 580);
             this.bEliminar.Name = "bEliminar";
             this.bEliminar.Size = new System.Drawing.Size(75, 23);
             this.bEliminar.TabIndex = 7;
@@ -173,7 +173,7 @@
             // 
             // bModificar
             // 
-            this.bModificar.Location = new System.Drawing.Point(217, 618);
+            this.bModificar.Location = new System.Drawing.Point(220, 580);
             this.bModificar.Name = "bModificar";
             this.bModificar.Size = new System.Drawing.Size(75, 23);
             this.bModificar.TabIndex = 7;
@@ -183,7 +183,7 @@
             // 
             // bNuevo
             // 
-            this.bNuevo.Location = new System.Drawing.Point(27, 618);
+            this.bNuevo.Location = new System.Drawing.Point(27, 580);
             this.bNuevo.Name = "bNuevo";
             this.bNuevo.Size = new System.Drawing.Size(75, 23);
             this.bNuevo.TabIndex = 7;
@@ -211,7 +211,7 @@
             this.lectoresDataGridView.ReadOnly = true;
             this.lectoresDataGridView.RowHeadersVisible = false;
             this.lectoresDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.lectoresDataGridView.Size = new System.Drawing.Size(447, 495);
+            this.lectoresDataGridView.Size = new System.Drawing.Size(447, 470);
             this.lectoresDataGridView.TabIndex = 6;
             // 
             // idlecDataGridViewTextBoxColumn
@@ -321,18 +321,18 @@
             this.gbDetalle.Controls.Add(this.fecha_nacimiento_lecDateTimePicker);
             this.gbDetalle.Controls.Add(fecha_penalizacion_lecLabel);
             this.gbDetalle.Controls.Add(this.fecha_penalizacion_lecDateTimePicker);
-            this.gbDetalle.Location = new System.Drawing.Point(508, 12);
+            this.gbDetalle.Location = new System.Drawing.Point(526, 12);
             this.gbDetalle.Name = "gbDetalle";
-            this.gbDetalle.Size = new System.Drawing.Size(490, 653);
+            this.gbDetalle.Size = new System.Drawing.Size(472, 617);
             this.gbDetalle.TabIndex = 0;
             this.gbDetalle.TabStop = false;
             this.gbDetalle.Text = "Detalle lector";
             // 
             // bBuscarProvincia
             // 
-            this.bBuscarProvincia.Location = new System.Drawing.Point(437, 107);
+            this.bBuscarProvincia.Location = new System.Drawing.Point(420, 107);
             this.bBuscarProvincia.Name = "bBuscarProvincia";
-            this.bBuscarProvincia.Size = new System.Drawing.Size(27, 23);
+            this.bBuscarProvincia.Size = new System.Drawing.Size(25, 23);
             this.bBuscarProvincia.TabIndex = 16;
             this.bBuscarProvincia.Text = "...";
             this.bBuscarProvincia.UseVisualStyleBackColor = true;
@@ -340,7 +340,7 @@
             // 
             // bCancelar
             // 
-            this.bCancelar.Location = new System.Drawing.Point(389, 618);
+            this.bCancelar.Location = new System.Drawing.Point(370, 580);
             this.bCancelar.Name = "bCancelar";
             this.bCancelar.Size = new System.Drawing.Size(75, 23);
             this.bCancelar.TabIndex = 15;
@@ -350,7 +350,7 @@
             // 
             // bAceptar
             // 
-            this.bAceptar.Location = new System.Drawing.Point(308, 618);
+            this.bAceptar.Location = new System.Drawing.Point(289, 580);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(75, 23);
             this.bAceptar.TabIndex = 14;
@@ -361,56 +361,56 @@
             // id_lecTextBox
             // 
             this.id_lecTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lectoresBindingSource, "id_lec", true));
-            this.id_lecTextBox.Location = new System.Drawing.Point(147, 31);
+            this.id_lecTextBox.Location = new System.Drawing.Point(119, 31);
             this.id_lecTextBox.Name = "id_lecTextBox";
-            this.id_lecTextBox.Size = new System.Drawing.Size(317, 20);
+            this.id_lecTextBox.Size = new System.Drawing.Size(326, 20);
             this.id_lecTextBox.TabIndex = 1;
             // 
             // nombre_lecTextBox
             // 
             this.nombre_lecTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lectoresBindingSource, "nombre_lec", true));
-            this.nombre_lecTextBox.Location = new System.Drawing.Point(147, 57);
+            this.nombre_lecTextBox.Location = new System.Drawing.Point(119, 57);
             this.nombre_lecTextBox.Name = "nombre_lecTextBox";
-            this.nombre_lecTextBox.Size = new System.Drawing.Size(317, 20);
+            this.nombre_lecTextBox.Size = new System.Drawing.Size(326, 20);
             this.nombre_lecTextBox.TabIndex = 3;
             // 
             // domicilio_lecTextBox
             // 
             this.domicilio_lecTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lectoresBindingSource, "domicilio_lec", true));
-            this.domicilio_lecTextBox.Location = new System.Drawing.Point(147, 83);
+            this.domicilio_lecTextBox.Location = new System.Drawing.Point(119, 83);
             this.domicilio_lecTextBox.Name = "domicilio_lecTextBox";
-            this.domicilio_lecTextBox.Size = new System.Drawing.Size(317, 20);
+            this.domicilio_lecTextBox.Size = new System.Drawing.Size(326, 20);
             this.domicilio_lecTextBox.TabIndex = 5;
             // 
             // provincia_lecIDTextBox
             // 
             this.provincia_lecIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lectoresBindingSource, "provincia_lec", true));
-            this.provincia_lecIDTextBox.Location = new System.Drawing.Point(147, 109);
+            this.provincia_lecIDTextBox.Location = new System.Drawing.Point(119, 109);
             this.provincia_lecIDTextBox.Name = "provincia_lecIDTextBox";
             this.provincia_lecIDTextBox.Size = new System.Drawing.Size(26, 20);
             this.provincia_lecIDTextBox.TabIndex = 7;
             // 
             // provincia_lecTextBox
             // 
-            this.provincia_lecTextBox.Location = new System.Drawing.Point(179, 109);
+            this.provincia_lecTextBox.Location = new System.Drawing.Point(151, 109);
             this.provincia_lecTextBox.Name = "provincia_lecTextBox";
-            this.provincia_lecTextBox.Size = new System.Drawing.Size(252, 20);
+            this.provincia_lecTextBox.Size = new System.Drawing.Size(263, 20);
             this.provincia_lecTextBox.TabIndex = 7;
             // 
             // email_lecTextBox
             // 
             this.email_lecTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lectoresBindingSource, "email_lec", true));
-            this.email_lecTextBox.Location = new System.Drawing.Point(147, 135);
+            this.email_lecTextBox.Location = new System.Drawing.Point(119, 135);
             this.email_lecTextBox.Name = "email_lecTextBox";
-            this.email_lecTextBox.Size = new System.Drawing.Size(317, 20);
+            this.email_lecTextBox.Size = new System.Drawing.Size(326, 20);
             this.email_lecTextBox.TabIndex = 9;
             // 
             // fecha_nacimiento_lecDateTimePicker
             // 
             this.fecha_nacimiento_lecDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.lectoresBindingSource, "fecha_nacimiento_lec", true));
-            this.fecha_nacimiento_lecDateTimePicker.Location = new System.Drawing.Point(147, 161);
+            this.fecha_nacimiento_lecDateTimePicker.Location = new System.Drawing.Point(119, 161);
             this.fecha_nacimiento_lecDateTimePicker.Name = "fecha_nacimiento_lecDateTimePicker";
-            this.fecha_nacimiento_lecDateTimePicker.Size = new System.Drawing.Size(317, 20);
+            this.fecha_nacimiento_lecDateTimePicker.Size = new System.Drawing.Size(326, 20);
             this.fecha_nacimiento_lecDateTimePicker.TabIndex = 11;
             // 
             // fecha_penalizacion_lecDateTimePicker
@@ -419,9 +419,9 @@
             this.fecha_penalizacion_lecDateTimePicker.CustomFormat = "dddd\',\'d\' de \'MMM\' de \'yyyy    hh:mm:ss";
             this.fecha_penalizacion_lecDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.lectoresBindingSource, "fecha_penalizacion_lec", true));
             this.fecha_penalizacion_lecDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.fecha_penalizacion_lecDateTimePicker.Location = new System.Drawing.Point(147, 187);
+            this.fecha_penalizacion_lecDateTimePicker.Location = new System.Drawing.Point(119, 187);
             this.fecha_penalizacion_lecDateTimePicker.Name = "fecha_penalizacion_lecDateTimePicker";
-            this.fecha_penalizacion_lecDateTimePicker.Size = new System.Drawing.Size(317, 20);
+            this.fecha_penalizacion_lecDateTimePicker.Size = new System.Drawing.Size(326, 20);
             this.fecha_penalizacion_lecDateTimePicker.TabIndex = 13;
             // 
             // lectoresTableAdapter

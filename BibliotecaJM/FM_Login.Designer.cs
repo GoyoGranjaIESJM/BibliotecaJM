@@ -91,9 +91,11 @@
             // 
             // FM_Login
             // 
+            this.AcceptButton = this.bAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.CancelButton = this.bCancelar;
             this.ClientSize = new System.Drawing.Size(254, 158);
             this.ControlBox = false;
             this.Controls.Add(this.tbContraseña);
@@ -106,6 +108,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FM_Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Login de usuario";
             this.ResumeLayout(false);
             this.PerformLayout();
