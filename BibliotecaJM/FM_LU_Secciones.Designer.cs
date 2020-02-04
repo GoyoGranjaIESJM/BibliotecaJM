@@ -31,22 +31,22 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FM_LU_Secciones));
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.seccionesDataGridView = new System.Windows.Forms.DataGridView();
+            this.seccionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dS_Secciones = new BibliotecaJM.DS_Secciones();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tbSeccion = new System.Windows.Forms.ToolStripTextBox();
             this.bBuscar = new System.Windows.Forms.ToolStripButton();
-            this.seccionesDataGridView = new System.Windows.Forms.DataGridView();
+            this.seccionesTableAdapter = new BibliotecaJM.DS_SeccionesTableAdapters.seccionesTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.seccionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dS_Secciones = new BibliotecaJM.DS_Secciones();
-            this.seccionesTableAdapter = new BibliotecaJM.DS_SeccionesTableAdapters.seccionesTableAdapter();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.seccionesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seccionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_Secciones)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -70,6 +70,40 @@
             // toolStripContainer1.TopToolStripPanel
             // 
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip1);
+            // 
+            // seccionesDataGridView
+            // 
+            this.seccionesDataGridView.AllowUserToAddRows = false;
+            this.seccionesDataGridView.AllowUserToDeleteRows = false;
+            this.seccionesDataGridView.AllowUserToResizeColumns = false;
+            this.seccionesDataGridView.AllowUserToResizeRows = false;
+            this.seccionesDataGridView.AutoGenerateColumns = false;
+            this.seccionesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.seccionesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.seccionesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            this.seccionesDataGridView.DataSource = this.seccionesBindingSource;
+            this.seccionesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.seccionesDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.seccionesDataGridView.MultiSelect = false;
+            this.seccionesDataGridView.Name = "seccionesDataGridView";
+            this.seccionesDataGridView.ReadOnly = true;
+            this.seccionesDataGridView.RowHeadersVisible = false;
+            this.seccionesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.seccionesDataGridView.Size = new System.Drawing.Size(293, 425);
+            this.seccionesDataGridView.TabIndex = 0;
+            this.seccionesDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.seccionesDataGridView_CellDoubleClick);
+            // 
+            // seccionesBindingSource
+            // 
+            this.seccionesBindingSource.DataMember = "secciones";
+            this.seccionesBindingSource.DataSource = this.dS_Secciones;
+            // 
+            // dS_Secciones
+            // 
+            this.dS_Secciones.DataSetName = "DS_Secciones";
+            this.dS_Secciones.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // toolStrip1
             // 
@@ -99,57 +133,27 @@
             this.bBuscar.ToolTipText = "Buscar";
             this.bBuscar.Click += new System.EventHandler(this.bBuscar_Click);
             // 
-            // seccionesDataGridView
+            // seccionesTableAdapter
             // 
-            this.seccionesDataGridView.AllowUserToAddRows = false;
-            this.seccionesDataGridView.AllowUserToDeleteRows = false;
-            this.seccionesDataGridView.AllowUserToResizeColumns = false;
-            this.seccionesDataGridView.AllowUserToResizeRows = false;
-            this.seccionesDataGridView.AutoGenerateColumns = false;
-            this.seccionesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.seccionesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.seccionesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
-            this.seccionesDataGridView.DataSource = this.seccionesBindingSource;
-            this.seccionesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.seccionesDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.seccionesDataGridView.MultiSelect = false;
-            this.seccionesDataGridView.Name = "seccionesDataGridView";
-            this.seccionesDataGridView.ReadOnly = true;
-            this.seccionesDataGridView.RowHeadersVisible = false;
-            this.seccionesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.seccionesDataGridView.Size = new System.Drawing.Size(293, 425);
-            this.seccionesDataGridView.TabIndex = 0;
-            this.seccionesDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.seccionesDataGridView_CellDoubleClick);
+            this.seccionesTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dataGridViewTextBoxColumn1.DataPropertyName = "id_sec";
+            this.dataGridViewTextBoxColumn1.FillWeight = 50.76142F;
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 43;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "seccion_sec";
+            this.dataGridViewTextBoxColumn2.FillWeight = 149.2386F;
             this.dataGridViewTextBoxColumn2.HeaderText = "Sección";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // seccionesBindingSource
-            // 
-            this.seccionesBindingSource.DataMember = "secciones";
-            this.seccionesBindingSource.DataSource = this.dS_Secciones;
-            // 
-            // dS_Secciones
-            // 
-            this.dS_Secciones.DataSetName = "DS_Secciones";
-            this.dS_Secciones.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // seccionesTableAdapter
-            // 
-            this.seccionesTableAdapter.ClearBeforeFill = true;
             // 
             // FM_LU_Secciones
             // 
@@ -166,11 +170,11 @@
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.seccionesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.seccionesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_Secciones)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }

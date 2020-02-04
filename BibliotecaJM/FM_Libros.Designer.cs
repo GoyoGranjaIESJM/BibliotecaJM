@@ -36,6 +36,8 @@
             System.Windows.Forms.Label prestado_sn_libLabel;
             this.gbBuscar = new System.Windows.Forms.GroupBox();
             this.librosDataGridView = new System.Windows.Forms.DataGridView();
+            this.librosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dS_Libros = new BibliotecaJM.DS_Libros();
             this.bEliminar = new System.Windows.Forms.Button();
             this.bModificar = new System.Windows.Forms.Button();
             this.bNuevo = new System.Windows.Forms.Button();
@@ -49,21 +51,19 @@
             this.tbTítulo = new System.Windows.Forms.TextBox();
             this.tbID = new System.Windows.Forms.TextBox();
             this.gbDetalle = new System.Windows.Forms.GroupBox();
+            this.bBuscarSeccion = new System.Windows.Forms.Button();
             this.id_libTextBox = new System.Windows.Forms.TextBox();
             this.titulo_libTextBox = new System.Windows.Forms.TextBox();
             this.autor_libTextBox = new System.Windows.Forms.TextBox();
+            this.tbSeccion = new System.Windows.Forms.TextBox();
             this.seccion_libTextBox = new System.Windows.Forms.TextBox();
             this.lSituacion = new System.Windows.Forms.Label();
             this.bAceptar = new System.Windows.Forms.Button();
             this.bCancelar = new System.Windows.Forms.Button();
-            this.tbSeccion = new System.Windows.Forms.TextBox();
-            this.bBuscarSeccion = new System.Windows.Forms.Button();
-            this.librosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dS_Libros = new BibliotecaJM.DS_Libros();
+            this.librosTableAdapter = new BibliotecaJM.DS_LibrosTableAdapters.librosTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.librosTableAdapter = new BibliotecaJM.DS_LibrosTableAdapters.librosTableAdapter();
             id_libLabel = new System.Windows.Forms.Label();
             titulo_libLabel = new System.Windows.Forms.Label();
             autor_libLabel = new System.Windows.Forms.Label();
@@ -71,9 +71,9 @@
             prestado_sn_libLabel = new System.Windows.Forms.Label();
             this.gbBuscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.librosDataGridView)).BeginInit();
-            this.gbDetalle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.librosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_Libros)).BeginInit();
+            this.gbDetalle.SuspendLayout();
             this.SuspendLayout();
             // 
             // id_libLabel
@@ -165,6 +165,17 @@
             this.librosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.librosDataGridView.Size = new System.Drawing.Size(450, 429);
             this.librosDataGridView.TabIndex = 12;
+            // 
+            // librosBindingSource
+            // 
+            this.librosBindingSource.DataMember = "libros";
+            this.librosBindingSource.DataSource = this.dS_Libros;
+            this.librosBindingSource.PositionChanged += new System.EventHandler(this.librosBindingSource_PositionChanged);
+            // 
+            // dS_Libros
+            // 
+            this.dS_Libros.DataSetName = "DS_Libros";
+            this.dS_Libros.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bEliminar
             // 
@@ -297,6 +308,16 @@
             this.gbDetalle.TabStop = false;
             this.gbDetalle.Text = "Detalle Libro";
             // 
+            // bBuscarSeccion
+            // 
+            this.bBuscarSeccion.Location = new System.Drawing.Point(450, 127);
+            this.bBuscarSeccion.Name = "bBuscarSeccion";
+            this.bBuscarSeccion.Size = new System.Drawing.Size(26, 23);
+            this.bBuscarSeccion.TabIndex = 20;
+            this.bBuscarSeccion.Text = "...";
+            this.bBuscarSeccion.UseVisualStyleBackColor = true;
+            this.bBuscarSeccion.Click += new System.EventHandler(this.bBuscarSeccion_Click);
+            // 
             // id_libTextBox
             // 
             this.id_libTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.librosBindingSource, "id_lib", true));
@@ -320,6 +341,13 @@
             this.autor_libTextBox.Name = "autor_libTextBox";
             this.autor_libTextBox.Size = new System.Drawing.Size(373, 20);
             this.autor_libTextBox.TabIndex = 15;
+            // 
+            // tbSeccion
+            // 
+            this.tbSeccion.Location = new System.Drawing.Point(134, 129);
+            this.tbSeccion.Name = "tbSeccion";
+            this.tbSeccion.Size = new System.Drawing.Size(310, 20);
+            this.tbSeccion.TabIndex = 17;
             // 
             // seccion_libTextBox
             // 
@@ -356,44 +384,24 @@
             this.bCancelar.UseVisualStyleBackColor = true;
             this.bCancelar.Click += new System.EventHandler(this.bCancelar_Click);
             // 
-            // tbSeccion
+            // librosTableAdapter
             // 
-            this.tbSeccion.Location = new System.Drawing.Point(134, 129);
-            this.tbSeccion.Name = "tbSeccion";
-            this.tbSeccion.Size = new System.Drawing.Size(310, 20);
-            this.tbSeccion.TabIndex = 17;
-            // 
-            // bBuscarSeccion
-            // 
-            this.bBuscarSeccion.Location = new System.Drawing.Point(450, 127);
-            this.bBuscarSeccion.Name = "bBuscarSeccion";
-            this.bBuscarSeccion.Size = new System.Drawing.Size(26, 23);
-            this.bBuscarSeccion.TabIndex = 20;
-            this.bBuscarSeccion.Text = "...";
-            this.bBuscarSeccion.UseVisualStyleBackColor = true;
-            this.bBuscarSeccion.Click += new System.EventHandler(this.bBuscarSeccion_Click);
-            // 
-            // librosBindingSource
-            // 
-            this.librosBindingSource.DataMember = "libros";
-            this.librosBindingSource.DataSource = this.dS_Libros;
-            this.librosBindingSource.PositionChanged += new System.EventHandler(this.librosBindingSource_PositionChanged);
-            // 
-            // dS_Libros
-            // 
-            this.dS_Libros.DataSetName = "DS_Libros";
-            this.dS_Libros.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.librosTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dataGridViewTextBoxColumn1.DataPropertyName = "id_lib";
+            this.dataGridViewTextBoxColumn1.FillWeight = 76.14214F;
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 43;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "titulo_lib";
+            this.dataGridViewTextBoxColumn2.FillWeight = 111.9289F;
             this.dataGridViewTextBoxColumn2.HeaderText = "Título";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
@@ -401,13 +409,10 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "autor_lib";
+            this.dataGridViewTextBoxColumn3.FillWeight = 111.9289F;
             this.dataGridViewTextBoxColumn3.HeaderText = "Autor";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // librosTableAdapter
-            // 
-            this.librosTableAdapter.ClearBeforeFill = true;
             // 
             // FM_Libros
             // 
@@ -420,10 +425,10 @@
             this.gbBuscar.ResumeLayout(false);
             this.gbBuscar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.librosDataGridView)).EndInit();
-            this.gbDetalle.ResumeLayout(false);
-            this.gbDetalle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.librosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_Libros)).EndInit();
+            this.gbDetalle.ResumeLayout(false);
+            this.gbDetalle.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -448,9 +453,6 @@
         private System.Windows.Forms.BindingSource librosBindingSource;
         private DS_LibrosTableAdapters.librosTableAdapter librosTableAdapter;
         private System.Windows.Forms.DataGridView librosDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.Button bAceptar;
         private System.Windows.Forms.Button bCancelar;
         private System.Windows.Forms.TextBox id_libTextBox;
@@ -460,5 +462,8 @@
         private System.Windows.Forms.Label lSituacion;
         private System.Windows.Forms.Button bBuscarSeccion;
         private System.Windows.Forms.TextBox tbSeccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }

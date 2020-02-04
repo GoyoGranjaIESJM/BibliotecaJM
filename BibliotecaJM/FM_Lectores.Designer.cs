@@ -41,9 +41,6 @@
             this.bModificar = new System.Windows.Forms.Button();
             this.bNuevo = new System.Windows.Forms.Button();
             this.lectoresDataGridView = new System.Windows.Forms.DataGridView();
-            this.idlecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombrelecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.domiciliolecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lectoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS_Lectores = new BibliotecaJM.DS_Lectores();
             this.bBuscarNombre = new System.Windows.Forms.Button();
@@ -65,6 +62,9 @@
             this.fecha_nacimiento_lecDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.fecha_penalizacion_lecDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.lectoresTableAdapter = new BibliotecaJM.DS_LectoresTableAdapters.lectoresTableAdapter();
+            this.idlecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombrelecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.domiciliolecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             id_lecLabel = new System.Windows.Forms.Label();
             nombre_lecLabel = new System.Windows.Forms.Label();
             domicilio_lecLabel = new System.Windows.Forms.Label();
@@ -213,30 +213,6 @@
             this.lectoresDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.lectoresDataGridView.Size = new System.Drawing.Size(447, 470);
             this.lectoresDataGridView.TabIndex = 6;
-            // 
-            // idlecDataGridViewTextBoxColumn
-            // 
-            this.idlecDataGridViewTextBoxColumn.DataPropertyName = "id_lec";
-            this.idlecDataGridViewTextBoxColumn.FillWeight = 60.9137F;
-            this.idlecDataGridViewTextBoxColumn.HeaderText = "Identificador";
-            this.idlecDataGridViewTextBoxColumn.Name = "idlecDataGridViewTextBoxColumn";
-            this.idlecDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombrelecDataGridViewTextBoxColumn
-            // 
-            this.nombrelecDataGridViewTextBoxColumn.DataPropertyName = "nombre_lec";
-            this.nombrelecDataGridViewTextBoxColumn.FillWeight = 119.5432F;
-            this.nombrelecDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombrelecDataGridViewTextBoxColumn.Name = "nombrelecDataGridViewTextBoxColumn";
-            this.nombrelecDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // domiciliolecDataGridViewTextBoxColumn
-            // 
-            this.domiciliolecDataGridViewTextBoxColumn.DataPropertyName = "domicilio_lec";
-            this.domiciliolecDataGridViewTextBoxColumn.FillWeight = 119.5432F;
-            this.domiciliolecDataGridViewTextBoxColumn.HeaderText = "Domicilio";
-            this.domiciliolecDataGridViewTextBoxColumn.Name = "domiciliolecDataGridViewTextBoxColumn";
-            this.domiciliolecDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // lectoresBindingSource
             // 
@@ -428,6 +404,32 @@
             // 
             this.lectoresTableAdapter.ClearBeforeFill = true;
             // 
+            // idlecDataGridViewTextBoxColumn
+            // 
+            this.idlecDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.idlecDataGridViewTextBoxColumn.DataPropertyName = "id_lec";
+            this.idlecDataGridViewTextBoxColumn.FillWeight = 60.9137F;
+            this.idlecDataGridViewTextBoxColumn.HeaderText = "Identificador";
+            this.idlecDataGridViewTextBoxColumn.Name = "idlecDataGridViewTextBoxColumn";
+            this.idlecDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idlecDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // nombrelecDataGridViewTextBoxColumn
+            // 
+            this.nombrelecDataGridViewTextBoxColumn.DataPropertyName = "nombre_lec";
+            this.nombrelecDataGridViewTextBoxColumn.FillWeight = 119.5432F;
+            this.nombrelecDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombrelecDataGridViewTextBoxColumn.Name = "nombrelecDataGridViewTextBoxColumn";
+            this.nombrelecDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // domiciliolecDataGridViewTextBoxColumn
+            // 
+            this.domiciliolecDataGridViewTextBoxColumn.DataPropertyName = "domicilio_lec";
+            this.domiciliolecDataGridViewTextBoxColumn.FillWeight = 119.5432F;
+            this.domiciliolecDataGridViewTextBoxColumn.HeaderText = "Domicilio";
+            this.domiciliolecDataGridViewTextBoxColumn.Name = "domiciliolecDataGridViewTextBoxColumn";
+            this.domiciliolecDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // FM_Lectores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -476,10 +478,10 @@
         private System.Windows.Forms.TextBox email_lecTextBox;
         private System.Windows.Forms.DateTimePicker fecha_nacimiento_lecDateTimePicker;
         private System.Windows.Forms.DateTimePicker fecha_penalizacion_lecDateTimePicker;
+        private System.Windows.Forms.Button bBuscarProvincia;
+        private System.Windows.Forms.TextBox provincia_lecIDTextBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn idlecDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombrelecDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn domiciliolecDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button bBuscarProvincia;
-        private System.Windows.Forms.TextBox provincia_lecIDTextBox;
     }
 }

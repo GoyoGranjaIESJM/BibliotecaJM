@@ -121,13 +121,16 @@ namespace BibliotecaJM
                 var secciones = new DS_Secciones.seccionesDataTable();
                 var ta = new DS_SeccionesTableAdapters.seccionesTableAdapter();
                 ta.FillByID(secciones, dS_Libros.libros[librosBindingSource.Position].seccion_lib);
+                seccion = tbSeccion.Text = secciones[0].seccion_sec;
             }
             else
                 seccion = tbSeccion.Text = "";
 
             // Visulizar/Ocultar la sitación:
             if (dS_Libros.libros[librosBindingSource.Position].prestado_sn_lib == "S")
+            {
                 lSituacion.Text = "PRESTADO";
+            }
             else
                 lSituacion.Text = "NO PRESTADO";
         }
