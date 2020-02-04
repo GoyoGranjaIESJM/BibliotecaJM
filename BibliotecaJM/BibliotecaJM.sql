@@ -94,10 +94,10 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[libros](
 	[id_lib] [int] IDENTITY(1,1) NOT NULL,
-	[titulo_lib] [nchar](50) NULL,
-	[autor_lib] [nchar](50) NULL,
+	[titulo_lib] [nvarchar](50) NULL,
+	[autor_lib] [nvarchar](50) NULL,
 	[seccion_lib] [int] NULL,
-	[prestado_sn_lib] [nchar](50) NULL,
+	[prestado_sn_lib] [nchar](1) NULL,
  CONSTRAINT [PK_libros] PRIMARY KEY CLUSTERED 
 (
 	[id_lib] ASC
@@ -139,8 +139,8 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[configuracion](
-	[nombre_biblioteca_cnf] [nchar](50) NULL,
-	[direccion_cnf] [nchar](50) NULL,
+	[nombre_biblioteca_cnf] [nvarchar](50) NULL,
+	[direccion_cnf] [nvarchar](50) NULL,
 	[provincia_cnf] [int] NULL,
 	[dias_prestamo_cnf] [int] NOT NULL,
 	[dias_penalizacion_cnf] [int] NOT NULL
@@ -171,10 +171,10 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[lectores](
 	[id_lec] [int] IDENTITY(1,1) NOT NULL,
-	[nombre_lec] [nchar](50) NULL,
-	[domicilio_lec] [nchar](50) NULL,
+	[nombre_lec] [nvarchar](50) NULL,
+	[domicilio_lec] [nvarchar](50) NULL,
 	[provincia_lec] [int] NULL,
-	[email_lec] [nchar](50) NULL,
+	[email_lec] [nvarchar](50) NULL,
 	[fecha_nacimiento_lec] [date] NULL,
 	[fecha_penalizacion_lec] [datetime] NULL,
  CONSTRAINT [PK_lectores] PRIMARY KEY CLUSTERED 
@@ -190,7 +190,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[provincias](
 	[id_pro] [int] NOT NULL,
-	[provincia_pro] [nchar](50) NULL,
+	[provincia_pro] [nvarchar](50) NULL,
  CONSTRAINT [PK_provincias] PRIMARY KEY CLUSTERED 
 (
 	[id_pro] ASC
@@ -204,7 +204,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[secciones](
 	[id_sec] [int] NOT NULL,
-	[seccion_sec] [nchar](50) NULL,
+	[seccion_sec] [nvarchar](50) NULL,
  CONSTRAINT [PK_secciones] PRIMARY KEY CLUSTERED 
 (
 	[id_sec] ASC
@@ -217,9 +217,9 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[usuarios](
-	[nombre_usu] [nchar](20) NOT NULL,
-	[password_usu] [nchar](20) NOT NULL,
-	[tipo_usu] [char](1) NOT NULL,
+	[nombre_usu] [nvarchar](20) NOT NULL,
+	[password_usu] [nvarchar](20) NOT NULL,
+	[tipo_usu] [nchar](1) NOT NULL,
  CONSTRAINT [PK_usuarios_1] PRIMARY KEY CLUSTERED 
 (
 	[nombre_usu] ASC
