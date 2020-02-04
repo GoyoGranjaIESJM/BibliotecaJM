@@ -279,6 +279,8 @@ namespace BibliotecaJM {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class configuracionDataTable : global::System.Data.TypedTableBase<configuracionRow> {
             
+            private global::System.Data.DataColumn columnid_cnf;
+            
             private global::System.Data.DataColumn columnnombre_biblioteca_cnf;
             
             private global::System.Data.DataColumn columndireccion_cnf;
@@ -320,6 +322,14 @@ namespace BibliotecaJM {
             protected configuracionDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn id_cnfColumn {
+                get {
+                    return this.columnid_cnf;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -402,6 +412,7 @@ namespace BibliotecaJM {
             public configuracionRow AddconfiguracionRow(string nombre_biblioteca_cnf, string direccion_cnf, int provincia_cnf, int dias_prestamo_cnf, int dias_penalizacion_cnf) {
                 configuracionRow rowconfiguracionRow = ((configuracionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        null,
                         nombre_biblioteca_cnf,
                         direccion_cnf,
                         provincia_cnf,
@@ -410,6 +421,13 @@ namespace BibliotecaJM {
                 rowconfiguracionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowconfiguracionRow);
                 return rowconfiguracionRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public configuracionRow FindByid_cnf(int id_cnf) {
+                return ((configuracionRow)(this.Rows.Find(new object[] {
+                            id_cnf})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -429,6 +447,7 @@ namespace BibliotecaJM {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
+                this.columnid_cnf = base.Columns["id_cnf"];
                 this.columnnombre_biblioteca_cnf = base.Columns["nombre_biblioteca_cnf"];
                 this.columndireccion_cnf = base.Columns["direccion_cnf"];
                 this.columnprovincia_cnf = base.Columns["provincia_cnf"];
@@ -439,6 +458,8 @@ namespace BibliotecaJM {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
+                this.columnid_cnf = new global::System.Data.DataColumn("id_cnf", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_cnf);
                 this.columnnombre_biblioteca_cnf = new global::System.Data.DataColumn("nombre_biblioteca_cnf", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnombre_biblioteca_cnf);
                 this.columndireccion_cnf = new global::System.Data.DataColumn("direccion_cnf", typeof(string), null, global::System.Data.MappingType.Element);
@@ -449,6 +470,14 @@ namespace BibliotecaJM {
                 base.Columns.Add(this.columndias_prestamo_cnf);
                 this.columndias_penalizacion_cnf = new global::System.Data.DataColumn("dias_penalizacion_cnf", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndias_penalizacion_cnf);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid_cnf}, true));
+                this.columnid_cnf.AutoIncrement = true;
+                this.columnid_cnf.AutoIncrementSeed = -1;
+                this.columnid_cnf.AutoIncrementStep = -1;
+                this.columnid_cnf.AllowDBNull = false;
+                this.columnid_cnf.ReadOnly = true;
+                this.columnid_cnf.Unique = true;
                 this.columnnombre_biblioteca_cnf.MaxLength = 50;
                 this.columndireccion_cnf.MaxLength = 50;
                 this.columndias_prestamo_cnf.AllowDBNull = false;
@@ -591,6 +620,17 @@ namespace BibliotecaJM {
             internal configuracionRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tableconfiguracion = ((configuracionDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int id_cnf {
+                get {
+                    return ((int)(this[this.tableconfiguracion.id_cnfColumn]));
+                }
+                set {
+                    this[this.tableconfiguracion.id_cnfColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -860,24 +900,56 @@ namespace BibliotecaJM.DS_ConfiguracionTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "configuracion";
+            tableMapping.ColumnMappings.Add("id_cnf", "id_cnf");
             tableMapping.ColumnMappings.Add("nombre_biblioteca_cnf", "nombre_biblioteca_cnf");
             tableMapping.ColumnMappings.Add("direccion_cnf", "direccion_cnf");
             tableMapping.ColumnMappings.Add("provincia_cnf", "provincia_cnf");
             tableMapping.ColumnMappings.Add("dias_prestamo_cnf", "dias_prestamo_cnf");
             tableMapping.ColumnMappings.Add("dias_penalizacion_cnf", "dias_penalizacion_cnf");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[configuracion] WHERE (([id_cnf] = @Original_id_cnf) AND ((@IsNull_nombre_biblioteca_cnf = 1 AND [nombre_biblioteca_cnf] IS NULL) OR ([nombre_biblioteca_cnf] = @Original_nombre_biblioteca_cnf)) AND ((@IsNull_direccion_cnf = 1 AND [direccion_cnf] IS NULL) OR ([direccion_cnf] = @Original_direccion_cnf)) AND ((@IsNull_provincia_cnf = 1 AND [provincia_cnf] IS NULL) OR ([provincia_cnf] = @Original_provincia_cnf)) AND ([dias_prestamo_cnf] = @Original_dias_prestamo_cnf) AND ([dias_penalizacion_cnf] = @Original_dias_penalizacion_cnf))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_cnf", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cnf", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nombre_biblioteca_cnf", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre_biblioteca_cnf", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nombre_biblioteca_cnf", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre_biblioteca_cnf", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_direccion_cnf", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "direccion_cnf", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_direccion_cnf", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "direccion_cnf", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_provincia_cnf", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "provincia_cnf", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_provincia_cnf", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "provincia_cnf", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dias_prestamo_cnf", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dias_prestamo_cnf", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dias_penalizacion_cnf", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dias_penalizacion_cnf", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[configuracion] ([nombre_biblioteca_cnf], [direccion_cnf], [pro" +
-                "vincia_cnf], [dias_prestamo_cnf], [dias_penalizacion_cnf]) VALUES (@nombre_bibli" +
-                "oteca_cnf, @direccion_cnf, @provincia_cnf, @dias_prestamo_cnf, @dias_penalizacio" +
-                "n_cnf)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[configuracion] ([nombre_biblioteca_cnf], [direccion_cnf], [provincia_cnf], [dias_prestamo_cnf], [dias_penalizacion_cnf]) VALUES (@nombre_biblioteca_cnf, @direccion_cnf, @provincia_cnf, @dias_prestamo_cnf, @dias_penalizacion_cnf);
+SELECT id_cnf, nombre_biblioteca_cnf, direccion_cnf, provincia_cnf, dias_prestamo_cnf, dias_penalizacion_cnf FROM configuracion WHERE (id_cnf = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre_biblioteca_cnf", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre_biblioteca_cnf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@direccion_cnf", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "direccion_cnf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre_biblioteca_cnf", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre_biblioteca_cnf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@direccion_cnf", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "direccion_cnf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@provincia_cnf", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "provincia_cnf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dias_prestamo_cnf", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dias_prestamo_cnf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dias_penalizacion_cnf", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dias_penalizacion_cnf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[configuracion] SET [nombre_biblioteca_cnf] = @nombre_biblioteca_cnf, [direccion_cnf] = @direccion_cnf, [provincia_cnf] = @provincia_cnf, [dias_prestamo_cnf] = @dias_prestamo_cnf, [dias_penalizacion_cnf] = @dias_penalizacion_cnf WHERE (([id_cnf] = @Original_id_cnf) AND ((@IsNull_nombre_biblioteca_cnf = 1 AND [nombre_biblioteca_cnf] IS NULL) OR ([nombre_biblioteca_cnf] = @Original_nombre_biblioteca_cnf)) AND ((@IsNull_direccion_cnf = 1 AND [direccion_cnf] IS NULL) OR ([direccion_cnf] = @Original_direccion_cnf)) AND ((@IsNull_provincia_cnf = 1 AND [provincia_cnf] IS NULL) OR ([provincia_cnf] = @Original_provincia_cnf)) AND ([dias_prestamo_cnf] = @Original_dias_prestamo_cnf) AND ([dias_penalizacion_cnf] = @Original_dias_penalizacion_cnf));
+SELECT id_cnf, nombre_biblioteca_cnf, direccion_cnf, provincia_cnf, dias_prestamo_cnf, dias_penalizacion_cnf FROM configuracion WHERE (id_cnf = @id_cnf)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre_biblioteca_cnf", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre_biblioteca_cnf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@direccion_cnf", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "direccion_cnf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@provincia_cnf", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "provincia_cnf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dias_prestamo_cnf", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dias_prestamo_cnf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dias_penalizacion_cnf", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dias_penalizacion_cnf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_cnf", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cnf", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nombre_biblioteca_cnf", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre_biblioteca_cnf", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nombre_biblioteca_cnf", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre_biblioteca_cnf", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_direccion_cnf", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "direccion_cnf", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_direccion_cnf", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "direccion_cnf", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_provincia_cnf", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "provincia_cnf", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_provincia_cnf", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "provincia_cnf", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dias_prestamo_cnf", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dias_prestamo_cnf", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dias_penalizacion_cnf", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dias_penalizacion_cnf", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_cnf", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_cnf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -893,8 +965,8 @@ namespace BibliotecaJM.DS_ConfiguracionTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT nombre_biblioteca_cnf, direccion_cnf, provincia_cnf, dias_prestamo_cnf, di" +
-                "as_penalizacion_cnf FROM dbo.configuracion";
+            this._commandCollection[0].CommandText = "SELECT id_cnf, nombre_biblioteca_cnf, direccion_cnf, provincia_cnf, dias_prestamo" +
+                "_cnf, dias_penalizacion_cnf FROM dbo.configuracion";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -954,6 +1026,54 @@ namespace BibliotecaJM.DS_ConfiguracionTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_id_cnf, string Original_nombre_biblioteca_cnf, string Original_direccion_cnf, global::System.Nullable<int> Original_provincia_cnf, int Original_dias_prestamo_cnf, int Original_dias_penalizacion_cnf) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id_cnf));
+            if ((Original_nombre_biblioteca_cnf == null)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_nombre_biblioteca_cnf));
+            }
+            if ((Original_direccion_cnf == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_direccion_cnf));
+            }
+            if ((Original_provincia_cnf.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_provincia_cnf.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_dias_prestamo_cnf));
+            this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_dias_penalizacion_cnf));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
         public virtual int Insert(string nombre_biblioteca_cnf, string direccion_cnf, global::System.Nullable<int> provincia_cnf, int dias_prestamo_cnf, int dias_penalizacion_cnf) {
             if ((nombre_biblioteca_cnf == null)) {
@@ -990,6 +1110,83 @@ namespace BibliotecaJM.DS_ConfiguracionTableAdapters {
                     this.Adapter.InsertCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string nombre_biblioteca_cnf, string direccion_cnf, global::System.Nullable<int> provincia_cnf, int dias_prestamo_cnf, int dias_penalizacion_cnf, int Original_id_cnf, string Original_nombre_biblioteca_cnf, string Original_direccion_cnf, global::System.Nullable<int> Original_provincia_cnf, int Original_dias_prestamo_cnf, int Original_dias_penalizacion_cnf, int id_cnf) {
+            if ((nombre_biblioteca_cnf == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(nombre_biblioteca_cnf));
+            }
+            if ((direccion_cnf == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(direccion_cnf));
+            }
+            if ((provincia_cnf.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(provincia_cnf.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(dias_prestamo_cnf));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(dias_penalizacion_cnf));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_id_cnf));
+            if ((Original_nombre_biblioteca_cnf == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_nombre_biblioteca_cnf));
+            }
+            if ((Original_direccion_cnf == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_direccion_cnf));
+            }
+            if ((Original_provincia_cnf.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_provincia_cnf.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_dias_prestamo_cnf));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_dias_penalizacion_cnf));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(id_cnf));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string nombre_biblioteca_cnf, string direccion_cnf, global::System.Nullable<int> provincia_cnf, int dias_prestamo_cnf, int dias_penalizacion_cnf, int Original_id_cnf, string Original_nombre_biblioteca_cnf, string Original_direccion_cnf, global::System.Nullable<int> Original_provincia_cnf, int Original_dias_prestamo_cnf, int Original_dias_penalizacion_cnf) {
+            return this.Update(nombre_biblioteca_cnf, direccion_cnf, provincia_cnf, dias_prestamo_cnf, dias_penalizacion_cnf, Original_id_cnf, Original_nombre_biblioteca_cnf, Original_direccion_cnf, Original_provincia_cnf, Original_dias_prestamo_cnf, Original_dias_penalizacion_cnf, Original_id_cnf);
         }
     }
     

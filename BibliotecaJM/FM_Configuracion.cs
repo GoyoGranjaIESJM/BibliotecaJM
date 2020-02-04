@@ -25,6 +25,8 @@ namespace BibliotecaJM
 
         private void FM_Configuracion_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'dS_Configuracion1.configuracion' Puede moverla o quitarla según sea necesario.
+            this.configuracionTableAdapter.Fill(this.dS_Configuracion.configuracion);
             tbProvincia.ReadOnly = true;
             provincia_cnfTextBox.ReadOnly = true;
             this.configuracionTableAdapter.Fill(this.dS_Configuracion.configuracion);
@@ -53,7 +55,6 @@ namespace BibliotecaJM
             this.configuracionTableAdapter.Update(this.dS_Configuracion.configuracion);
             MessageBox.Show("Datos guardados");
         }
-
 
     }
 }

@@ -34,9 +34,6 @@
             System.Windows.Forms.Label provincia_cnfLabel;
             System.Windows.Forms.Label dias_prestamo_cnfLabel;
             System.Windows.Forms.Label dias_penalizacion_cnfLabel;
-            this.dS_Configuracion = new BibliotecaJM.DS_Configuracion();
-            this.configuracionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.configuracionTableAdapter = new BibliotecaJM.DS_ConfiguracionTableAdapters.configuracionTableAdapter();
             this.nombre_biblioteca_cnfTextBox = new System.Windows.Forms.TextBox();
             this.direccion_cnfTextBox = new System.Windows.Forms.TextBox();
             this.provincia_cnfTextBox = new System.Windows.Forms.TextBox();
@@ -46,16 +43,19 @@
             this.dias_penalizacion_cnfNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.dias_prestamo_cnfNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.bGuardar = new System.Windows.Forms.Button();
+            this.dS_Configuracion = new BibliotecaJM.DS_Configuracion();
+            this.configuracionTableAdapter = new BibliotecaJM.DS_ConfiguracionTableAdapters.configuracionTableAdapter();
+            this.configuracionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             nombre_biblioteca_cnfLabel = new System.Windows.Forms.Label();
             direccion_cnfLabel = new System.Windows.Forms.Label();
             provincia_cnfLabel = new System.Windows.Forms.Label();
             dias_prestamo_cnfLabel = new System.Windows.Forms.Label();
             dias_penalizacion_cnfLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dS_Configuracion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.configuracionBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dias_penalizacion_cnfNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dias_prestamo_cnfNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_Configuracion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.configuracionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // nombre_biblioteca_cnfLabel
@@ -102,20 +102,6 @@
             dias_penalizacion_cnfLabel.Size = new System.Drawing.Size(110, 13);
             dias_penalizacion_cnfLabel.TabIndex = 9;
             dias_penalizacion_cnfLabel.Text = "Días de penalización:";
-            // 
-            // dS_Configuracion
-            // 
-            this.dS_Configuracion.DataSetName = "DS_Configuracion";
-            this.dS_Configuracion.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // configuracionBindingSource
-            // 
-            this.configuracionBindingSource.DataMember = "configuracion";
-            this.configuracionBindingSource.DataSource = this.dS_Configuracion;
-            // 
-            // configuracionTableAdapter
-            // 
-            this.configuracionTableAdapter.ClearBeforeFill = true;
             // 
             // nombre_biblioteca_cnfTextBox
             // 
@@ -206,6 +192,20 @@
             this.bGuardar.UseVisualStyleBackColor = true;
             this.bGuardar.Click += new System.EventHandler(this.bGuardar_Click);
             // 
+            // dS_Configuracion
+            // 
+            this.dS_Configuracion.DataSetName = "DS_Configuracion";
+            this.dS_Configuracion.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // configuracionTableAdapter
+            // 
+            this.configuracionTableAdapter.ClearBeforeFill = true;
+            // 
+            // configuracionBindingSource
+            // 
+            this.configuracionBindingSource.DataMember = "configuracion";
+            this.configuracionBindingSource.DataSource = this.dS_Configuracion;
+            // 
             // FM_Configuracion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,21 +213,18 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FM_Configuracion";
             this.Load += new System.EventHandler(this.FM_Configuracion_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dS_Configuracion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.configuracionBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dias_penalizacion_cnfNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dias_prestamo_cnfNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_Configuracion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.configuracionBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DS_Configuracion dS_Configuracion;
-        private System.Windows.Forms.BindingSource configuracionBindingSource;
-        private DS_ConfiguracionTableAdapters.configuracionTableAdapter configuracionTableAdapter;
         private System.Windows.Forms.TextBox nombre_biblioteca_cnfTextBox;
         private System.Windows.Forms.TextBox direccion_cnfTextBox;
         private System.Windows.Forms.TextBox provincia_cnfTextBox;
@@ -237,5 +234,8 @@
         private System.Windows.Forms.TextBox tbProvincia;
         private System.Windows.Forms.NumericUpDown dias_penalizacion_cnfNumericUpDown;
         private System.Windows.Forms.NumericUpDown dias_prestamo_cnfNumericUpDown;
+        private DS_Configuracion dS_Configuracion;
+        private DS_ConfiguracionTableAdapters.configuracionTableAdapter configuracionTableAdapter;
+        private System.Windows.Forms.BindingSource configuracionBindingSource;
     }
 }
