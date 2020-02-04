@@ -141,7 +141,7 @@
             this.bBuscar.Image = ((System.Drawing.Image)(resources.GetObject("bBuscar.Image")));
             this.bBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bBuscar.Name = "bBuscar";
-            this.bBuscar.Size = new System.Drawing.Size(46, 19);
+            this.bBuscar.Size = new System.Drawing.Size(46, 22);
             this.bBuscar.Text = "Buscar";
             this.bBuscar.Click += new System.EventHandler(this.bBuscar_Click);
             // 

@@ -139,6 +139,12 @@
     <Compile Include="FM_LU_Provincias.Designer.cs">
       <DependentUpon>FM_LU_Provincias.cs</DependentUpon>
     </Compile>
+    <Compile Include="FM_LU_Secciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FM_LU_Secciones.Designer.cs">
+      <DependentUpon>FM_LU_Secciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="FM_Modelo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,11 +169,17 @@
     <EmbeddedResource Include="FM_Lectores.resx">
       <DependentUpon>FM_Lectores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FM_Libros.resx">
+      <DependentUpon>FM_Libros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FM_Login.resx">
       <DependentUpon>FM_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FM_LU_Provincias.resx">
       <DependentUpon>FM_LU_Provincias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FM_LU_Secciones.resx">
+      <DependentUpon>FM_LU_Secciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FM_Modelo.resx">
       <DependentUpon>FM_Modelo.cs</DependentUpon>
