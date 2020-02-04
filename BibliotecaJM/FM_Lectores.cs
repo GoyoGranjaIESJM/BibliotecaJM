@@ -11,6 +11,7 @@ namespace BibliotecaJM
     public partial class FM_Lectores : BibliotecaJM.FM_Modelo
     {
         private UsuarioActual usuarioActual;
+        // Almacenamiento temporal de la provincia (permite recordar la provincia si se cancela la edición):
         private string provincia;
         public FM_Lectores()
         {
@@ -25,7 +26,7 @@ namespace BibliotecaJM
 
         private void FM_Lectores_Load(object sender, EventArgs e)
         {
-            // No se puede editar el ID, la provincia ni la fecha de penalizacion:
+            // No se puede editar ID, provincia y fecha de penalizacion:
             this.id_lecTextBox.ReadOnly = true;
             this.provincia_lecTextBox.ReadOnly = true;
             this.provincia_lecIDTextBox.ReadOnly = true;
@@ -62,7 +63,8 @@ namespace BibliotecaJM
         private void bNuevo_Click(object sender, EventArgs e)
         {
             this.lectoresBindingSource.AddNew();
-            provincia_lecTextBox.Text = ""; // No está enlazado a datos
+            // No está enlazado a datos:
+            provincia_lecTextBox.Text = ""; 
             ModoEdición();
         }
 
@@ -103,12 +105,14 @@ namespace BibliotecaJM
         private void bCancelar_Click(object sender, EventArgs e)
         {
             lectoresBindingSource.CancelEdit();
+            // Dejar la provincia como estaba:
             provincia_lecTextBox.Text = provincia;
             ModoBusqueda();
         }
 
         private void lectoresBindingSource_PositionChanged(object sender, EventArgs e)
         {
+            // Leer la provincia:
             if (!dS_Lectores.lectores[lectoresBindingSource.Position].Isprovincia_lecNull())
             {
                 var provincias = new DS_Provincias.provinciasDataTable();
@@ -119,6 +123,7 @@ namespace BibliotecaJM
             else
                 provincia = provincia_lecTextBox.Text = "";
 
+            // Visulizar/Ocultar la fecha de penalización:
             if (!dS_Lectores.lectores[lectoresBindingSource.Position].Isfecha_penalizacion_lecNull())
                 fecha_penalizacion_lecDateTimePicker.Show();
             else
