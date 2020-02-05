@@ -187,6 +187,9 @@
     <EmbeddedResource Include="FM_Modelo.resx">
       <DependentUpon>FM_Modelo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FM_Prestamos.resx">
+      <DependentUpon>FM_Prestamos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FM_Principal.resx">
       <DependentUpon>FM_Principal.cs</DependentUpon>
     </EmbeddedResource>
