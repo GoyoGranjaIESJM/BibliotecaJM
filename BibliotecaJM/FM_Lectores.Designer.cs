@@ -41,6 +41,9 @@
             this.bModificar = new System.Windows.Forms.Button();
             this.bNuevo = new System.Windows.Forms.Button();
             this.lectoresDataGridView = new System.Windows.Forms.DataGridView();
+            this.idlecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombrelecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.domiciliolecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lectoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS_Lectores = new BibliotecaJM.DS_Lectores();
             this.bBuscarNombre = new System.Windows.Forms.Button();
@@ -62,9 +65,6 @@
             this.fecha_nacimiento_lecDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.fecha_penalizacion_lecDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.lectoresTableAdapter = new BibliotecaJM.DS_LectoresTableAdapters.lectoresTableAdapter();
-            this.idlecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombrelecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.domiciliolecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             id_lecLabel = new System.Windows.Forms.Label();
             nombre_lecLabel = new System.Windows.Forms.Label();
             domicilio_lecLabel = new System.Windows.Forms.Label();
@@ -214,6 +214,32 @@
             this.lectoresDataGridView.Size = new System.Drawing.Size(447, 470);
             this.lectoresDataGridView.TabIndex = 6;
             // 
+            // idlecDataGridViewTextBoxColumn
+            // 
+            this.idlecDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.idlecDataGridViewTextBoxColumn.DataPropertyName = "id_lec";
+            this.idlecDataGridViewTextBoxColumn.FillWeight = 60.9137F;
+            this.idlecDataGridViewTextBoxColumn.HeaderText = "Identificador";
+            this.idlecDataGridViewTextBoxColumn.Name = "idlecDataGridViewTextBoxColumn";
+            this.idlecDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idlecDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // nombrelecDataGridViewTextBoxColumn
+            // 
+            this.nombrelecDataGridViewTextBoxColumn.DataPropertyName = "nombre_lec";
+            this.nombrelecDataGridViewTextBoxColumn.FillWeight = 119.5432F;
+            this.nombrelecDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombrelecDataGridViewTextBoxColumn.Name = "nombrelecDataGridViewTextBoxColumn";
+            this.nombrelecDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // domiciliolecDataGridViewTextBoxColumn
+            // 
+            this.domiciliolecDataGridViewTextBoxColumn.DataPropertyName = "domicilio_lec";
+            this.domiciliolecDataGridViewTextBoxColumn.FillWeight = 119.5432F;
+            this.domiciliolecDataGridViewTextBoxColumn.HeaderText = "Domicilio";
+            this.domiciliolecDataGridViewTextBoxColumn.Name = "domiciliolecDataGridViewTextBoxColumn";
+            this.domiciliolecDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // lectoresBindingSource
             // 
             this.lectoresBindingSource.DataMember = "lectores";
@@ -299,7 +325,7 @@
             this.gbDetalle.Controls.Add(this.fecha_penalizacion_lecDateTimePicker);
             this.gbDetalle.Location = new System.Drawing.Point(526, 12);
             this.gbDetalle.Name = "gbDetalle";
-            this.gbDetalle.Size = new System.Drawing.Size(472, 617);
+            this.gbDetalle.Size = new System.Drawing.Size(459, 617);
             this.gbDetalle.TabIndex = 0;
             this.gbDetalle.TabStop = false;
             this.gbDetalle.Text = "Detalle lector";
@@ -403,32 +429,6 @@
             // lectoresTableAdapter
             // 
             this.lectoresTableAdapter.ClearBeforeFill = true;
-            // 
-            // idlecDataGridViewTextBoxColumn
-            // 
-            this.idlecDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.idlecDataGridViewTextBoxColumn.DataPropertyName = "id_lec";
-            this.idlecDataGridViewTextBoxColumn.FillWeight = 60.9137F;
-            this.idlecDataGridViewTextBoxColumn.HeaderText = "Identificador";
-            this.idlecDataGridViewTextBoxColumn.Name = "idlecDataGridViewTextBoxColumn";
-            this.idlecDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idlecDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // nombrelecDataGridViewTextBoxColumn
-            // 
-            this.nombrelecDataGridViewTextBoxColumn.DataPropertyName = "nombre_lec";
-            this.nombrelecDataGridViewTextBoxColumn.FillWeight = 119.5432F;
-            this.nombrelecDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombrelecDataGridViewTextBoxColumn.Name = "nombrelecDataGridViewTextBoxColumn";
-            this.nombrelecDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // domiciliolecDataGridViewTextBoxColumn
-            // 
-            this.domiciliolecDataGridViewTextBoxColumn.DataPropertyName = "domicilio_lec";
-            this.domiciliolecDataGridViewTextBoxColumn.FillWeight = 119.5432F;
-            this.domiciliolecDataGridViewTextBoxColumn.HeaderText = "Domicilio";
-            this.domiciliolecDataGridViewTextBoxColumn.Name = "domiciliolecDataGridViewTextBoxColumn";
-            this.domiciliolecDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // FM_Lectores
             // 

@@ -58,10 +58,10 @@
             this.bRealizarPrestamo = new System.Windows.Forms.Button();
             this.bBuscarLibroPorAutor = new System.Windows.Forms.Button();
             this.bBuscarLibroPorTítulo = new System.Windows.Forms.Button();
-            this.BuscarLibroPorID = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.bBuscarLibroPorID = new System.Windows.Forms.Button();
+            this.tbIdLibro = new System.Windows.Forms.TextBox();
+            this.tbTituloLibro = new System.Windows.Forms.TextBox();
+            this.tbAutorLibro = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -75,6 +75,7 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.librosTableAdapter = new BibliotecaJM.DS_LibrosTableAdapters.librosTableAdapter();
+            this.label6 = new System.Windows.Forms.Label();
             id_lecLabel = new System.Windows.Forms.Label();
             nombre_lecLabel = new System.Windows.Forms.Label();
             fecha_penalizacion_lecLabel = new System.Windows.Forms.Label();
@@ -254,10 +255,10 @@
             this.groupBox2.Controls.Add(this.bRealizarPrestamo);
             this.groupBox2.Controls.Add(this.bBuscarLibroPorAutor);
             this.groupBox2.Controls.Add(this.bBuscarLibroPorTítulo);
-            this.groupBox2.Controls.Add(this.BuscarLibroPorID);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.bBuscarLibroPorID);
+            this.groupBox2.Controls.Add(this.tbIdLibro);
+            this.groupBox2.Controls.Add(this.tbTituloLibro);
+            this.groupBox2.Controls.Add(this.tbAutorLibro);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label3);
@@ -348,6 +349,7 @@
             this.bRealizarPrestamo.TabIndex = 2;
             this.bRealizarPrestamo.Text = "REALIZAR PRÉSTAMO";
             this.bRealizarPrestamo.UseVisualStyleBackColor = true;
+            this.bRealizarPrestamo.Click += new System.EventHandler(this.bRealizarPrestamo_Click);
             // 
             // bBuscarLibroPorAutor
             // 
@@ -357,6 +359,7 @@
             this.bBuscarLibroPorAutor.TabIndex = 2;
             this.bBuscarLibroPorAutor.Text = "Buscar";
             this.bBuscarLibroPorAutor.UseVisualStyleBackColor = true;
+            this.bBuscarLibroPorAutor.Click += new System.EventHandler(this.bBuscarLibroPorAutor_Click);
             // 
             // bBuscarLibroPorTítulo
             // 
@@ -366,36 +369,38 @@
             this.bBuscarLibroPorTítulo.TabIndex = 2;
             this.bBuscarLibroPorTítulo.Text = "Buscar";
             this.bBuscarLibroPorTítulo.UseVisualStyleBackColor = true;
+            this.bBuscarLibroPorTítulo.Click += new System.EventHandler(this.bBuscarLibroPorTítulo_Click);
             // 
-            // BuscarLibroPorID
+            // bBuscarLibroPorID
             // 
-            this.BuscarLibroPorID.Location = new System.Drawing.Point(378, 26);
-            this.BuscarLibroPorID.Name = "BuscarLibroPorID";
-            this.BuscarLibroPorID.Size = new System.Drawing.Size(75, 23);
-            this.BuscarLibroPorID.TabIndex = 2;
-            this.BuscarLibroPorID.Text = "Buscar";
-            this.BuscarLibroPorID.UseVisualStyleBackColor = true;
+            this.bBuscarLibroPorID.Location = new System.Drawing.Point(378, 26);
+            this.bBuscarLibroPorID.Name = "bBuscarLibroPorID";
+            this.bBuscarLibroPorID.Size = new System.Drawing.Size(75, 23);
+            this.bBuscarLibroPorID.TabIndex = 2;
+            this.bBuscarLibroPorID.Text = "Buscar";
+            this.bBuscarLibroPorID.UseVisualStyleBackColor = true;
+            this.bBuscarLibroPorID.Click += new System.EventHandler(this.BuscarLibroPorID_Click);
             // 
-            // textBox4
+            // tbIdLibro
             // 
-            this.textBox4.Location = new System.Drawing.Point(110, 28);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(262, 20);
-            this.textBox4.TabIndex = 1;
+            this.tbIdLibro.Location = new System.Drawing.Point(110, 28);
+            this.tbIdLibro.Name = "tbIdLibro";
+            this.tbIdLibro.Size = new System.Drawing.Size(262, 20);
+            this.tbIdLibro.TabIndex = 1;
             // 
-            // textBox5
+            // tbTituloLibro
             // 
-            this.textBox5.Location = new System.Drawing.Point(110, 57);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(262, 20);
-            this.textBox5.TabIndex = 1;
+            this.tbTituloLibro.Location = new System.Drawing.Point(110, 57);
+            this.tbTituloLibro.Name = "tbTituloLibro";
+            this.tbTituloLibro.Size = new System.Drawing.Size(262, 20);
+            this.tbTituloLibro.TabIndex = 1;
             // 
-            // textBox3
+            // tbAutorLibro
             // 
-            this.textBox3.Location = new System.Drawing.Point(110, 83);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(262, 20);
-            this.textBox3.TabIndex = 1;
+            this.tbAutorLibro.Location = new System.Drawing.Point(110, 83);
+            this.tbAutorLibro.Name = "tbAutorLibro";
+            this.tbAutorLibro.Size = new System.Drawing.Size(262, 20);
+            this.tbAutorLibro.TabIndex = 1;
             // 
             // label4
             // 
@@ -500,10 +505,20 @@
             // 
             this.librosTableAdapter.ClearBeforeFill = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(79, 204);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "label6";
+            // 
             // FM_Prestamos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(1018, 700);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.librosPrestadosDataGridView);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -522,6 +537,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.librosPrestadosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.librosPrestadosDataGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -533,15 +549,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbIdLibro;
+        private System.Windows.Forms.TextBox tbAutorLibro;
         private System.Windows.Forms.Button bBuscarLectorPorNombre;
         private System.Windows.Forms.Button bBuscarLectorPorID;
         private System.Windows.Forms.Button bRealizarPrestamo;
         private System.Windows.Forms.Button bBuscarLibroPorAutor;
         private System.Windows.Forms.Button bBuscarLibroPorTítulo;
-        private System.Windows.Forms.Button BuscarLibroPorID;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button bBuscarLibroPorID;
+        private System.Windows.Forms.TextBox tbTituloLibro;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
@@ -569,5 +585,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.Label label6;
     }
 }
