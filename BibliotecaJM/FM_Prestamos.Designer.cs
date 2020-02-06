@@ -75,7 +75,6 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.librosTableAdapter = new BibliotecaJM.DS_LibrosTableAdapters.librosTableAdapter();
-            this.label6 = new System.Windows.Forms.Label();
             id_lecLabel = new System.Windows.Forms.Label();
             nombre_lecLabel = new System.Windows.Forms.Label();
             fecha_penalizacion_lecLabel = new System.Windows.Forms.Label();
@@ -158,7 +157,6 @@
             this.domicilio_lecLabel1.Name = "domicilio_lecLabel1";
             this.domicilio_lecLabel1.Size = new System.Drawing.Size(100, 23);
             this.domicilio_lecLabel1.TabIndex = 13;
-            this.domicilio_lecLabel1.Text = "label6";
             // 
             // lectoresBindingSource
             // 
@@ -173,11 +171,12 @@
             // fecha_penalizacion_lecLabel1
             // 
             this.fecha_penalizacion_lecLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lectoresBindingSource, "fecha_penalizacion_lec", true));
+            this.fecha_penalizacion_lecLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fecha_penalizacion_lecLabel1.ForeColor = System.Drawing.Color.Red;
             this.fecha_penalizacion_lecLabel1.Location = new System.Drawing.Point(145, 160);
             this.fecha_penalizacion_lecLabel1.Name = "fecha_penalizacion_lecLabel1";
             this.fecha_penalizacion_lecLabel1.Size = new System.Drawing.Size(100, 23);
             this.fecha_penalizacion_lecLabel1.TabIndex = 11;
-            this.fecha_penalizacion_lecLabel1.Text = "label6";
             // 
             // id_lecLabel1
             // 
@@ -186,7 +185,6 @@
             this.id_lecLabel1.Name = "id_lecLabel1";
             this.id_lecLabel1.Size = new System.Drawing.Size(200, 23);
             this.id_lecLabel1.TabIndex = 7;
-            this.id_lecLabel1.Text = "label6";
             // 
             // nombre_lecLabel1
             // 
@@ -195,7 +193,6 @@
             this.nombre_lecLabel1.Name = "nombre_lecLabel1";
             this.nombre_lecLabel1.Size = new System.Drawing.Size(200, 23);
             this.nombre_lecLabel1.TabIndex = 9;
-            this.nombre_lecLabel1.Text = "label6";
             // 
             // bBuscarLectorPorNombre
             // 
@@ -288,7 +285,6 @@
             this.librosDataGridView.Location = new System.Drawing.Point(22, 124);
             this.librosDataGridView.MultiSelect = false;
             this.librosDataGridView.Name = "librosDataGridView";
-            this.librosDataGridView.ReadOnly = true;
             this.librosDataGridView.RowHeadersVisible = false;
             this.librosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.librosDataGridView.Size = new System.Drawing.Size(459, 439);
@@ -505,20 +501,10 @@
             // 
             this.librosTableAdapter.ClearBeforeFill = true;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(79, 204);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "label6";
-            // 
             // FM_Prestamos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(1018, 700);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.librosPrestadosDataGridView);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -537,7 +523,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.librosPrestadosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.librosPrestadosDataGridView)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -585,6 +570,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.Label label6;
     }
 }
