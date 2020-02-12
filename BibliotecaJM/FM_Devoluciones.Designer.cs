@@ -47,8 +47,8 @@
             this.titulo_libLabel1 = new System.Windows.Forms.Label();
             this.autor_libLabel1 = new System.Windows.Forms.Label();
             this.seccion_libLabel1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.bBuscarLibro = new System.Windows.Forms.Button();
+            this.tbIDLibro = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.id_lecLabel1 = new System.Windows.Forms.Label();
@@ -207,8 +207,8 @@
             this.groupBox1.Controls.Add(this.autor_libLabel1);
             this.groupBox1.Controls.Add(seccion_libLabel);
             this.groupBox1.Controls.Add(this.seccion_libLabel1);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.bBuscarLibro);
+            this.groupBox1.Controls.Add(this.tbIDLibro);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -259,21 +259,22 @@
             this.seccion_libLabel1.Size = new System.Drawing.Size(279, 13);
             this.seccion_libLabel1.TabIndex = 10;
             // 
-            // button1
+            // bBuscarLibro
             // 
-            this.button1.Location = new System.Drawing.Point(387, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bBuscarLibro.Location = new System.Drawing.Point(387, 19);
+            this.bBuscarLibro.Name = "bBuscarLibro";
+            this.bBuscarLibro.Size = new System.Drawing.Size(75, 23);
+            this.bBuscarLibro.TabIndex = 2;
+            this.bBuscarLibro.Text = "Buscar";
+            this.bBuscarLibro.UseVisualStyleBackColor = true;
+            this.bBuscarLibro.Click += new System.EventHandler(this.bBuscarLibro_Click);
             // 
-            // textBox1
+            // tbIDLibro
             // 
-            this.textBox1.Location = new System.Drawing.Point(63, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(318, 20);
-            this.textBox1.TabIndex = 0;
+            this.tbIDLibro.Location = new System.Drawing.Point(63, 21);
+            this.tbIDLibro.Name = "tbIDLibro";
+            this.tbIDLibro.Size = new System.Drawing.Size(318, 20);
+            this.tbIDLibro.TabIndex = 0;
             // 
             // label2
             // 
@@ -384,6 +385,7 @@
             this.bBuscarLector.TabIndex = 2;
             this.bBuscarLector.Text = "Buscar";
             this.bBuscarLector.UseVisualStyleBackColor = true;
+            this.bBuscarLector.Click += new System.EventHandler(this.bBuscarLector_Click);
             // 
             // label1
             // 
@@ -435,6 +437,7 @@
             this.librosPrestadosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.librosPrestadosDataGridView.Size = new System.Drawing.Size(950, 295);
             this.librosPrestadosDataGridView.TabIndex = 0;
+            this.librosPrestadosDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.librosPrestadosDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -526,8 +529,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button bBuscarLibro;
+        private System.Windows.Forms.TextBox tbIDLibro;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button bBuscarLector;
         private System.Windows.Forms.Label label1;
