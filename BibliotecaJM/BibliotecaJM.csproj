@@ -169,6 +169,9 @@
     <EmbeddedResource Include="FM_Configuracion.resx">
       <DependentUpon>FM_Configuracion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FM_Devoluciones.resx">
+      <DependentUpon>FM_Devoluciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FM_Lectores.resx">
       <DependentUpon>FM_Lectores.cs</DependentUpon>
     </EmbeddedResource>
