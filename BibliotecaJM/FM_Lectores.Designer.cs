@@ -417,7 +417,6 @@
             // 
             // fecha_penalizacion_lecDateTimePicker
             // 
-            this.fecha_penalizacion_lecDateTimePicker.CalendarForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.fecha_penalizacion_lecDateTimePicker.CustomFormat = "dddd\',\'d\' de \'MMM\' de \'yyyy    hh:mm:ss";
             this.fecha_penalizacion_lecDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.lectoresBindingSource, "fecha_penalizacion_lec", true));
             this.fecha_penalizacion_lecDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
